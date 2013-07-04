@@ -1,0 +1,74 @@
+
+<div class="row">
+
+    <div class="large-2 columns"><img ng-src="{{ selectedBook.cover_image_url }}" /></div>
+    <div class="large-2 columns">
+        <p>{{ selectedBook.name }}</p>
+
+        <p>{{ issues.length }} issues</p>
+
+        <p>{{ totalPrice(issues) | currency}} Total</p>
+    </div>
+    <div class="large-8 collapse columns">
+        <div class="row ">
+            <div class="large-8 columns ">
+                Name <input type=text ng-model="newIssue.title">
+            </div>
+            <div class="large-2 columns ">
+                Issue<input type=text ng-model="newIssue.number">
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="large-2 columns">
+                Price <input type=text ng-model="newIssue.price">
+            </div>
+            <div class="large-10 columns">
+                Image Url <input type=text ng-model="newIssue.cover_image_url">
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="large-8 columns">
+                <button class="small button success" ng-click="saveIssue()">Add New Issue</button>
+                <button class="small button secondary" ng-click="newIssue = {}">Clear</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row " >
+
+    <table width="100%">
+        <tr>
+
+            <td >
+                Sort <select ng-model="issueOrder" length='70%'>
+                    <option>number</option>
+                    <option>title</option>
+                    <option>price</option>
+                </select>
+            </td>
+            <td >
+                Filter </br> <input ng-model="issueSearch" size='50px'>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <table width=100%>
+                <tr ng-repeat="issue in issues | orderBy: issueOrder | filter: issueSearch">
+                    <td ng-mouseover="setLargeImage(issue.cover_image_url)"><img ng-src="{{ issue.cover_image_url}}" width="50" /></td>
+                    <td>{{ issue.number }}</td>
+                    <td>{{ issue.title }}</td>
+                    <td>{{ issue.price | currency}}</td>
+                </tr>
+                </table>
+            </td>
+            <td width=45% valign="top"><img ng-src="{{ largeImage }}"></td>
+        </tr>
+    </table>
+
+</div>
+
+
