@@ -1,10 +1,11 @@
+<div class="row">
 
-
-<div ng-repeat="book in books" class="item" ng-click="showBook(book)">
+<div ng-repeat="book in books | orderBy: 'name'" class="item" ng-click="showBook(book)">
     <p>
         <img ng-src="{{ book.cover_image_url }}" width='200 '/>
     </p>
     <p>
         {{ book.name  }}
     </p>
+</div>
 </div>

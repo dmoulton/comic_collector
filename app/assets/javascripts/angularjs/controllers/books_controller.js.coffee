@@ -3,7 +3,6 @@
   Issue = $resource("/books/:book_id/issues/:id", {book_id: "@book_id",id: "@id"}, {update: {method: "PUT"}})
   $scope.issueOrder = "number"
 
-
   loadBooks = ->
     $scope.books = Book.query () ->
       bookId = $routeParams.bookId
@@ -14,6 +13,7 @@
         $scope.showBook(book)
 
   $scope.showBook = (book) ->
+    $scope.largeImage = book.cover_image_url
     $scope.selectedBook = book
     $location.path('/books/' + book.id)
     $scope.issues = Issue.query(book_id: book.id)
@@ -29,7 +29,7 @@
   $scope.saveIssue = () ->
     $scope.newIssue.book_id = $scope.selectedBook.id
     $scope.newIssue.number = parseInt($scope.newIssue.number)
-    $scope.newIssue.price = parseInt($scope.newIssue.price)
+    $scope.newIssue.price = parseFloat($scope.newIssue.price)
     $scope.issues.push $scope.newIssue
     Issue.save($scope.newIssue)
     $scope.newIssue = {}

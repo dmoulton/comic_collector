@@ -2,7 +2,7 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all
+    @issues = Issue.where(:book_id => params[:book_id])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -55,10 +55,10 @@
 
         </tr>
         <tr>
-            <td>
+            <td valign="top">
                 <table width=100%>
                 <tr ng-repeat="issue in issues | orderBy: issueOrder | filter: issueSearch">
-                    <td ng-mouseover="setLargeImage(issue.cover_image_url)"><img ng-src="{{ issue.cover_image_url}}" width="50" /></td>
+                    <td ng-mouseenter="setLargeImage(issue.cover_image_url)" ><img ng-src="{{ issue.cover_image_url}}" width="50" /></td>
                     <td>{{ issue.number }}</td>
                     <td>{{ issue.title }}</td>
                     <td>{{ issue.price | currency}}</td>
