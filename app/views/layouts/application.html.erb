@@ -22,18 +22,13 @@
   </head>
 
   <body ng-controller="BooksCtrl">
-  <div class="contain-to-grid fixed">
-      <nav class="top-bar">
-        <ul class="title-area">
-            <li class="name">
-              <h1><a href="/">Comic Collector</a></h1>
-            </li>
+  <div class="row page-header">
 
-        </ul>
+    <div class="c8">
+      <h2><a href="/">Comic Collector</a></h2>
+    </div>
 
-      </nav>
   </div>
-  <div style="margin-top: 50px;"></div>
     <div ng-view></div>
     <%= javascript_include_tag "application" %>
   </body>

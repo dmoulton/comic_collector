@@ -9,9 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
+ *= require gridiculous
  *= require_tree .
  */
+
+.issueinfo {
+    font-size: 150%;
+}
 
 .item {
     border: 1px solid black;
@@ -19,4 +23,106 @@
     padding: 5px;
     margin: 5px;
     float: left;
+}
+
+.page-header {
+    background-color: black;
+    height: 40px;
+    padding-bottom: 10px;
+    font-4: white;
+}
+
+a:link {text-decoration:none; color: white;}
+a:visited {text-decoration:none; color: white;}
+a:hover {text-decoration:none; color: white;}
+a:active {text-decoration:none; color: white;}
+
+table {
+    border: 1px solid lightgrey;
+}
+
+table tr:nth-child(odd) td {
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+}
+
+table tr:nth-child(even) td {
+    background-color: #FAFAFA;
+    border-bottom: 1px solid lightgrey;
+}
+
+.spacer {
+    padding-bottom: 10px;
+}
+
+/* buttons */
+.primary {
+    background-color:#000000;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #525252;
+    display:inline-block;
+    color:#e8e8e8;
+    font-family:arial;
+    font-size:16px;
+    font-weight:normal;
+    padding:3px 7px;
+    text-decoration:none;
+}.primary:hover {
+     background-color:#080808;
+ }.primary:active {
+      position:relative;
+      top:1px;
+  }
+
+.btn {
+    background-color:#ededed;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#777777;
+    font-family:arial;
+    font-size:16px;
+    font-weight:normal;
+    padding:3px 3px;
+    text-decoration:none;
+}.btn:hover {
+     background-color:#dfdfdf;
+ }.btn:active {
+      position:relative;
+      top:1px;
+  }
+
+
+input {
+    margin-bottom: 10px;
+    border: 1px solid #B3B3B3;
+    padding: 5px 9px;
+    font: 13px/18px "lucida grande",tahoma,verdana,arial,sans-serif;
+    background: white;
+    outline: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    -moz-transition-property: border-color;
+    -webkit-transition-property: border-color;
+    -o-transition-property: border-color;
+    transition-property: border-color;
+    -moz-transition-duration: 0.1s;
+    -webkit-transition-duration: 0.1s;
+    -o-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -moz-transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1),0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1),0 1px 0 rgba(255, 255, 255, 0.2);
+    width: 100%;
 }
