@@ -14,7 +14,7 @@
                 <div class="c1 spacer">Name</div>
                 <div class="c6 spacer"><input type=text ng-model="newIssue.title" ></div>
                 <div class="c1 spacer">Issue</div>
-                <div class="c2 =spacer"><input type=text ng-model="newIssue.number" ></div>
+                <div class="c2 spacer"><input type=text ng-model="newIssue.number" ></div>
 
             </div>
             <div class="row">
@@ -31,35 +31,37 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="c1">
-            Sort
-        </div>
-        <div class="c2">
-            <select ng-model="issueOrder" length='70%'>
-                <option>number</option>
-                <option>title</option>
-                <option>price</option>
-            </select>
-        </div>
-        <div class="c1">Filter</div>
-        <div class="c2">
-             <input ng-model="issueSearch">
-        </div>
-    </div>
+
     <div class="row">
         <div class="c7">
+            <div class="row spacer">
+                <div class="c1">
+                    Sort
+                </div>
+                <div class="c2">
+                    <select ng-model="issueOrder" length='70%'>
+                        <option>number</option>
+                        <option>title</option>
+                        <option>price</option>
+                    </select>
+                </div>
+                <div class="c1">Filter</div>
+                <div class="c4">
+                    <input ng-model="issueSearch">
+                </div>
+            </div>
             <table width=100%>
                 <tr ng-repeat="issue in issues | orderBy: issueOrder | filter: issueSearch">
-                    <td ng-mouseenter="setLargeImage(issue.cover_image_url)"><img ng-src="{{ issue.cover_image_url}}"
-                                                                                  width="50"></td>
+                    <td ng-mouseenter="setLargeImage(issue.cover_image_url)">
+                        <img ng-src="{{ issue.cover_image_url}}" width="50">
+                    </td>
                     <td>{{ issue.number }}</td>
                     <td>{{ issue.title }}</td>
                     <td>{{ issue.price | currency}}</td>
                 </tr>
             </table>
         </div>
-        <div class="c5">
+        <div class="c5 end">
             <img ng-src="{{ largeImage }}" width="300">
         </div>
     </div>

@@ -1,4 +1,4 @@
-@app.controller 'BooksCtrl', ["$scope", "$http", "$resource", "$location","$route","$routeParams", "$window", ($scope, $http, $resource, $location, $route, $routeParams, $window) ->
+@BooksCtrl = ($scope, $http, $resource, $location, $route, $routeParams) ->
   Book = $resource("/books/:id", {id: "@id"}, {update: {method: "PUT"}})
   Issue = $resource("/books/:book_id/issues/:id", {book_id: "@book_id",id: "@id"}, {update: {method: "PUT"}})
   $scope.issueOrder = "number"
@@ -28,8 +28,8 @@
 
   $scope.saveIssue = () ->
     $scope.newIssue.book_id = $scope.selectedBook.id
-    $scope.newIssue.number = parseInt($scope.newIssue.number)
-    $scope.newIssue.price = parseFloat($scope.newIssue.price)
+    $scope.newIssue.number  = parseInt($scope.newIssue.number)  #for proper sorting
+    $scope.newIssue.price   = parseFloat($scope.newIssue.price) #for proper sorting
     $scope.issues.push $scope.newIssue
     Issue.save($scope.newIssue)
     $scope.newIssue = {}
@@ -38,4 +38,3 @@
     $scope.largeImage = url
 
   loadBooks()
-]
