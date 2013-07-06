@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-resource
+//= require custom.modernizr
 //= require_tree ./angularjs
 //= require_tree .
 

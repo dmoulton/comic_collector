@@ -45,13 +45,19 @@
                         <option>price</option>
                     </select>
                 </div>
+                <div class="c1">
+                    reverse
+                </div>
+                <div class="c1">
+                    <input type=checkbox ng-model="reversed" >
+                </div>
                 <div class="c1">Filter</div>
                 <div class="c4">
                     <input ng-model="issueSearch">
                 </div>
             </div>
             <table width=100%>
-                <tr ng-repeat="issue in issues | orderBy: issueOrder | filter: issueSearch">
+                <tr ng-repeat="issue in issues | orderBy:issueOrder:reversed | filter: issueSearch">
                     <td ng-mouseenter="setLargeImage(issue.cover_image_url)">
                         <img ng-src="{{ issue.cover_image_url}}" width="50">
                     </td>

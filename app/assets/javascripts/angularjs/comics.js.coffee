@@ -1,8 +1,13 @@
-angular.module('Comics', ['ngResource']).config ["$routeProvider", "$locationProvider", ($routeProvider, $locationProvider) ->
+@app = angular.module('Comics', ['ngResource']).config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
   $locationProvider.html5Mode(true)
-  $routeProvider.when("/",
+  $routeProvider.when('/',
+    controller:  'BooksCtrl'
     templateUrl: '/partials/books.html'
-  ).when("/books/:bookId",
+  )
+
+  $routeProvider.when '/books/:bookId',
+    controller:   'BooksCtrl'
     templateUrl:  '/partials/issues.html'
-  ).otherwise("/")
+
+  $routeProvider.otherwise('/')
 ]
