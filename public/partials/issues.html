@@ -1,7 +1,7 @@
 <div class="grid wfull">
     <div class="row">
 
-        <div class="c2"><img ng-src="{{ selectedBook.cover_image_url }}"/></div>
+        <div class="c2"><img ng-src="{{ selectedBook.cover_image_url }}" /></div>
         <div class="c2">
             <p class="issueinfo"><strong>{{ selectedBook.name }}</strong></p>
 
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-
+    <hr />
     <div class="row">
         <div class="c7">
             <div class="row spacer">
@@ -45,8 +45,8 @@
                         <option>price</option>
                     </select>
                 </div>
-                <div class="c1">
-                    reverse
+                <div class="c2">
+                    Descending
                 </div>
                 <div class="c1">
                     <input type=checkbox ng-model="reversed" >
@@ -68,7 +68,7 @@
             </table>
         </div>
         <div class="c5 end">
-            <img ng-src="{{ largeImage }}" width="300">
+            <img ng-src="{{ largeImage }}" >
         </div>
     </div>
 </div>
