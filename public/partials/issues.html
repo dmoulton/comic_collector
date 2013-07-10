@@ -57,6 +57,12 @@
                 </div>
             </div>
             <table width=100%>
+                <tr class="header">
+                    <th></th>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                </tr>
                 <tr ng-repeat="issue in issues | orderBy:issueOrder:reversed | filter: issueSearch">
                     <td ng-mouseenter="setLargeImage(issue.cover_image_url)">
                         <img ng-src="{{ issue.cover_image_url}}" width="50">
